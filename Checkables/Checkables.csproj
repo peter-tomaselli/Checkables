@@ -42,6 +42,8 @@
     <Compile Include="Checkables\CheckableException.cs" />
     <Compile Include="Checkables\Guarded.cs" />
     <Compile Include="Checkables\ICheckable.cs" />
+    <Compile Include="Checkables\ICheckableExtensionsActions.cs" />
+    <Compile Include="Checkables\ICheckableExtensionsChaining.cs" />
     <Compile Include="Checkables\Maybe.cs" />
     <Compile Include="Checkables\NullableExtensionsInterop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

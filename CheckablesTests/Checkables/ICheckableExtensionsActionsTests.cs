@@ -4,7 +4,7 @@ using System;
 namespace Checkables.Tests
 {
     [TestClass]
-    public class ICheckableTests
+    public class ICheckableExtensionsActionsTests
     {
         [TestMethod]
         public void Checkable_Do_arity_one_short_circuits()

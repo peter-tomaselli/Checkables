@@ -41,48 +41,4 @@ namespace Checkables.Tests
             Assert.AreEqual(foo, maybe.Value);
         }
     }
-
-    [TestClass]
-    public class MaybeExtensionsTests
-    {
-        [TestMethod]
-        public void Maybe_test_FlatMap_short_circuits()
-        {
-            Func<string, Maybe<string>> explode = s =>
-            {
-                throw new InvalidOperationException();
-            };
-            Maybe<string> safe = new Maybe<string>().FlatMap(explode);
-        }
-
-        [TestMethod]
-        public void Maybe_test_Map_short_circuits()
-        {
-            Func<string, string> explode = s =>
-            {
-                throw new InvalidOperationException();
-            };
-            Maybe<string> safe = new Maybe<string>().Map(explode);
-        }
-
-        [TestMethod]
-        public void Maybe_test_FlatMap_succeeds()
-        {
-            Func<string, Maybe<string>> maybeCaps = s => new Maybe<string>(s == "foo" ? s.ToUpper() : null);
-            Maybe<string> maybeFooCaps = new Maybe<string>("foo").FlatMap(maybeCaps);
-            Assert.IsTrue(maybeFooCaps.HasValue);
-            Assert.AreEqual(maybeFooCaps.Value, "FOO");
-
-            Maybe<string> maybeBarCaps = new Maybe<string>("bar").FlatMap(maybeCaps);
-            Assert.IsFalse(maybeBarCaps.HasValue);
-        }
-
-        [TestMethod]
-        public void Maybe_test_Map_succeeds()
-        {
-            Maybe<string> fooCaps = new Maybe<string>("foo").Map(s => s.ToUpper());
-            Assert.IsTrue(fooCaps.HasValue);
-            Assert.AreEqual(fooCaps.Value, "FOO");
-        }
-    }
 }

@@ -51,7 +51,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Checkables\GuardedTests.cs" />
-    <Compile Include="Checkables\ICheckableTests.cs" />
+    <Compile Include="Checkables\ICheckableExtensionsActionsTests.cs" />
+    <Compile Include="Checkables\ICheckableExtensionsChainingTests.cs" />
     <Compile Include="Checkables\MaybeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
